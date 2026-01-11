@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luxebay Hotel Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="message">
+    <h1>🍽️ Luxebay Hotel Menu</h1>
+    <p>Experience comfort, delicious meals, and exceptional service—all in one place.
+    Explore our menu, place your order, and enjoy a memorable stay with us.</p>
+</div>
+
+<div class="menu">
+    <div class="item">
+        <img src="/images/Chicken Biryani.jpg" alt="Chicken Biryani" title="Chicken Biryani">
+        <h3>Chicken Biryani</h3>
+        <p>KES 450</p>
+        <input type="number" min="1" value="1" id="qty1">
+        <button onclick="addToCart('Chicken Biryani', 450, 'qty1')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <img src="/images/Beef Burger.jpg" alt="Beef Burger" title="Beef Burger">
+        <h3>Beef Burger</h3>
+        <p>KES 300</p>
+        <input type="number" min="1" value="1" id="qty2">
+        <button onclick="addToCart('Beef Burger', 300, 'qty2')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <img src="/images/Half Grilled Chicken.jpg" alt="Half Grilled Chicken" title="Half Grilled Chicken">
+        <h3>Half Grilled Chicken</h3>
+        <p>KES 600</p>
+        <input type="number" min="1" value="1" id="qty3">
+        <button onclick="addToCart('Half Grilled Chicken', 600, 'qty3')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <img src="/images/Chicken Pizza.jpg" alt="Chicken Pizza" title="Chicken Pizza">
+        <h3>Chicken Pizza</h3>
+        <p>KES 1000</p>
+        <input type="number" min="1" value="1" id="qty4">
+        <button onclick="addToCart('Chicken Pizza', 1000, 'qty4')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <img src="/images/Beef Burger.jpg" alt="Beef Pilau" title="Beef Pilau">
+        <h3>Beef Pilau</h3>
+        <p>KES 400</p>
+        <input type="number" min="1" value="1" id="qty5">
+        <button onclick="addToCart('Beef Pilau', 400, 'qty5')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <img src="/images/Sphagetti.jpg" alt="Spaghetti" title="Spaghetti">
+        <h3>Spaghetti</h3>
+        <p>KES 500</p>
+        <input type="number" min="1" value="1" id="qty6">
+        <button onclick="addToCart('Spaghetti', 500, 'qty6')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <img src="/images/Nyama Choma.jpg" alt="Nyama Choma" title="Nyama Choma">
+        <h3>Nyama Choma</h3>
+        <p>KES 700</p>
+        <input type="number" min="1" value="1" id="qty7">
+        <button onclick="addToCart('Nyama Choma', 700, 'qty7')">Add to Cart</button>
+    </div>
+</div>
+
+<h2>🛒 Cart</h2>
+<ul id="cart"></ul>
+<h3>Total: KES <span id="total">0</span></h3>
+
+<div class="checkout">
+    <input type="text" id="customerName" placeholder="Enter your name">
+    <input type="text" id="customerPhone" placeholder="Enter your phone number">
+    <button onclick="checkout()">Checkout</button>
+</div>
+
+<!-- M-Pesa Modal -->
+<div id="mpesaModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="mpesaText"></p>
+        <button onclick="alert('Payment simulated!')">Pay</button>
+    </div>
+</div>
+
+<!-- Admin Login -->
+<button onclick="openAdminLogin()" class="admin-btn">Admin Login</button>
+<div id="adminModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAdminLogin()">&times;</span>
+        <h2>Login to Account</h2>
+        <form id="adminForm" onsubmit="adminLogin(event)">
+            <input type="email" id="adminEmail" placeholder="Enter your EMAIL" required>
+            <input type="password" id="adminPassword" placeholder="Password" required>
+            <input type="text" id="adminPosition" placeholder="Staff Position (e.g., head cook)" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
